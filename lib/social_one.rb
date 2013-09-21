@@ -1,8 +1,12 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'koala'
+
 module SocialOne
 
 	class User
 		def initialize
-			@graph = Koala::Facebook::API.new()
+			@graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
 		end
 
 		def post_fb_text(status_update)
