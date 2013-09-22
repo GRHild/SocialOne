@@ -15,8 +15,7 @@ get '/' do
 end
 
 post '/facebook' do
-  @user = SocialOne::User.new('user')
-  @graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
+  @user = SocialOne::User.new(params[:update])
   @result = SocialOne::User.new(status_update).post_fb_update
   erb :result
 end
