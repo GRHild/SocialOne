@@ -7,8 +7,7 @@ module SocialOne
 	class User
 
 # Initialize a new user.
-		def initialize(user)
-      @user = user
+		def initialize
 # Initializes a user via the login token. I'm not sure why its called @graph.    
 			@graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
 		end

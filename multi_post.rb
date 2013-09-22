@@ -15,7 +15,9 @@ get '/' do
 end
 
 post '/facebook' do
-  @user = SocialOne::User.new(params[:update])
-  @result = SocialOne::User.new(status_update).post_fb_update
+  @user = SocialOne::User.new
+  puts "-------------------"
+  print "Result is: "
+  puts @result = @user.post_fb_text(params[:update])
   erb :result
 end
