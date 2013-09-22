@@ -17,6 +17,6 @@ end
 
 post '/facebook' do
   @graph = Koala::Facebook::API.new(params[:update])
-  @result = Koala::Facebook::API.new(status).post_fb_update('Maybe Works!!')
+  @result = Koala::Facebook::API.new(status_update).post_fb_update
   erb :result
 end
