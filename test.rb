@@ -2,8 +2,10 @@ require 'rubygems'
 require 'koala'
 require 'twitter'
 
-# graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
-# graph.put_connections('me', 'feed', :message => "still more testing")
+update = 'still more testing'
+
+graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
+graph.put_connections('me', 'feed', :message => update)
 
 client = Twitter::Client.new.configure do |config|
   config.consumer_key        = ENV['CONSUMER_KEY']
@@ -12,5 +14,5 @@ client = Twitter::Client.new.configure do |config|
   config.oauth_token_secret  = ENV['OAUTH_TOKEN_SECRET']
 end
 
-client.update('another test')
+client.update(update)
 
