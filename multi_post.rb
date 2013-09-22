@@ -16,7 +16,7 @@ get '/' do
 end
 
 post '/facebook' do
-  @graph = SocialOne::User.new
+  @graph = SocialOne::User.new(user)
   @result = SocialOne::User.new(status_update).post_fb_update
   erb :result
 end
