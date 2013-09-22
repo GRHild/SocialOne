@@ -10,6 +10,7 @@ include SocialOne
 
 
 get '/' do
+  'Hello World'
   erb :socialone
 end
 
