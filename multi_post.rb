@@ -16,7 +16,7 @@ get '/' do
 end
 
 post '/facebook' do
-  @graph = Koala::Facebook::API.new(params[:update])
+  @graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
   @result = Koala::Facebook::API.new(status_update).post_fb_update
   erb :result
 end
